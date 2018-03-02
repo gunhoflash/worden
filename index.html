@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>WORDEN</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="description" content="중고등부 학생들의 영단어 공부를 위한 사이트">
+	<meta name="theme-color" content="#2196F3">
+	
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="WORDEN">
+	<meta property="og:description" content="중고등부 학생들의 영단어 공부를 위한 사이트">
+	<meta property="og:url" content="http://worden.dothome.co.kr">
+
+	<link rel="canonical" href="http://worden.dothome.co.kr/index.html">
+	<link rel="stylesheet" type="text/css" href="StyleSheet.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="shortcut icon" href="favicon/Wfavicon_pink.ico">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+	<script type="text/javascript" src="myJavascript.js"></script>
+</head>
+
+<body class="noMargin">
+	<header id="Header" class="centerText themeColorContainer">
+		<div id="Header-top" class="nav-wrapper">
+			<div id="HeaderTitle" class="centerText">WORDEN</div>
+			<div id="MenuButton" class="cursor notSelectable centerText noMarginPadding noTapHighlight themeColorContainer">
+				<i class="material-icons">menu</i>
+			</div>
+		</div>
+		<div id="Buttons" class="themeColorContainer">
+			<div id="prevButton" class="cursor noTapHighlight notSelectable noOutline">
+				<i class="material-icons">arrow_back</i>
+			</div>
+			<p id="HeaderSubTitle" class="noMarginPadding notSelectable centerText"></p>
+			<div id="nextButton" class="cursor noTapHighlight notSelectable noOutline">
+				<i class="material-icons">arrow_forward</i>
+			</div>
+		</div>
+	</header>
+
+	<div id="SideNav">
+		<ul class="notSelectable noMarginPadding">
+			<img src="img/sideNavImg.svg" alt="GF">
+		</ul>
+		<div id="adminButton"><a></a></div>
+	</div>
+	<section>
+		<div class="centerText themeColor">
+			<p>영단어를 누르면 발음이 재생됩니다.</p>
+			<p>(모바일 사용자는 무음모드를 해제해야 들립니다.)</p>
+		</div>
+		<div id="phpData" class="container48 autoMargin"></div>
+		<button id="SearchButton" class="cursor notSelectable centerText noMarginPadding noOutline noTapHighlight shadow_dynamic">
+			<i class="material-icons">search</i>
+		</button>
+	</section>
+
+	<footer class="centerText">
+		<div>gunhoflash@naver.com<br>© 2016-2017 GF, All rights reserved.</div>
+	</footer>
+	
+	<div id="SearchButtonContainer" class="row-flex">
+		<div id="SearchBox" class="container32 centerText noMarginPadding shadow_dynamic row-flex">
+			<div id="SearchBoxDropdown" class="noMargin notSelectable cursor centerText noOutline noTapHighlight themeColor2">
+				<span>ID</span><i class="material-icons">arrow_drop_up</i>
+				<div id="SearchBoxDropdownMenu">
+					<div>Unit</div>
+					<div>ID</div>
+					<div>Word</div>
+				</div>
+			</div>
+			<div id="SearchBox_input">
+				<input type="text" class="centerText alphaInput noMarginPadding" maxlength="64" placeholder="type here">
+			</div>
+			<button id="SearchBoxSearch" class="noMarginPadding notSelectable cursor centerText noOutline noTapHighlight bold">
+				<i class="material-icons">search</i>
+			</button>
+		</div>
+	</div>
+</body>
+
+</html>

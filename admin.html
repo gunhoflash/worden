@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>WORDEN - 관리자</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="description" content="WORDEN 관리자 화면">
+	<meta name="theme-color" content="#3F51B5">
+	
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="WORDEN - 관리자">
+	<meta property="og:description" content="WORDEN 관리자 화면">
+	<meta property="og:url" content="http://worden.dothome.co.kr/admin.html">
+
+	<link rel="canonical" href="http://worden.dothome.co.kr/admin.html">
+	<link rel="stylesheet" type="text/css" href="StyleSheet.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="shortcut icon" href="favicon/Wfavicon_white.ico">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+	<script type="text/javascript" src="adminJavascript.js"></script>
+	<style>
+		:root
+		{
+			--themeColor: #3F51B5; /* Indigo 500 */
+			--themeColor2: #FF4081; /* Pink A200 */
+		}
+	</style>
+</head>
+
+<body class="noMargin">
+	<header id="Header" class="centerText themeColorContainer">
+		<div id="Header-top" class="nav-wrapper">
+			<div id="HeaderTitle" class="centerText">ADMIN</div>
+			<div id="MenuButton" class="cursor notSelectable centerText noMarginPadding noTapHighlight themeColorContainer">
+				<i class="material-icons">menu</i>
+			</div>
+		</div>
+		<div id="Buttons" class="themeColorContainer">
+			<div id="prevButton" class="cursor noTapHighlight notSelectable noOutline">
+				<i class="material-icons">arrow_back</i>
+			</div>
+			<p id="HeaderSubTitle" class="noMarginPadding notSelectable centerText"></p>
+			<div id="nextButton" class="cursor noTapHighlight notSelectable noOutline">
+				<i class="material-icons">arrow_forward</i>
+			</div>
+		</div>
+	</header>
+
+	<div id="SideNav">
+		<ul class="notSelectable noMarginPadding">
+			<img src="img/sideNavImg.svg" alt="GF">
+			<li><a style="color:var(--themeColor);">+ 새 단어장 만들기</a></li>
+		</ul>
+		<div id="adminButton">
+			<a>WORDEN</a>
+		</div>
+	</div>
+	<section>
+		<div id="tableInfo">
+			<div id="tableInfoContainer" class="column-flex alignCenter container48">
+				<div class="flex container48">
+					<div id="tableInfo-summit" class="centerText cursor shadow_dynamic notSelectable">저장하기</div>
+				</div>
+				<div class="row-flex container48 wrap">
+					<div class="column-flex flex-child">
+						<label for="tableInfo-table" class="themeColor inputLabel">단어장 이름</label>
+						<input type="text" id="tableInfo-table" value="table name here" class="alphaThemeInput" maxlength="32">
+					</div>
+					<div class="column-flex flex-child">
+						<label for="tableInfo-db" class="themeColor inputLabel">DB 이름</label>
+						<input type="text" id="tableInfo-db" value="db name here" class="alphaThemeInput" maxlength="32">
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div id="phpData" class="container48 autoMargin"></div>
+		<button id="SearchButton" class="cursor notSelectable centerText noMarginPadding noOutline noTapHighlight shadow_dynamic">
+			<i class="material-icons">search</i>
+		</button>
+		<button id="AddButton" class="cursor notSelectable centerText noMarginPadding noOutline noTapHighlight shadow_dynamic">
+			<i class="material-icons">add</i>
+		</button>
+	</section>
+
+	<footer class="centerText">
+		<div>gunhoflash@naver.com<br>© 2016-2017 GF, All rights reserved.</div>
+	</footer>
+
+	<div id="SearchButtonContainer" class="row-flex">
+		<div id="SearchBox" class="container32 centerText noMarginPadding shadow_dynamic row-flex">
+			<div id="SearchBoxDropdown" class="noMargin notSelectable cursor centerText noOutline noTapHighlight themeColor2">
+				<span>ID</span><i class="material-icons">arrow_drop_up</i>
+				<div id="SearchBoxDropdownMenu">
+					<div>Unit</div>
+					<div>ID</div>
+					<div>Word</div>
+				</div>
+			</div>
+			<div id="SearchBox_input">
+				<input type="text" class="centerText alphaInput noMarginPadding" maxlength="64" placeholder="type here">
+			</div>
+			<button id="SearchBoxSearch" class="noMargin notSelectable cursor centerText noOutline noTapHighlight bold">
+				<i class="material-icons">search</i>
+			</button>
+		</div>
+
+		<div id="AddBox" class="removed noMarginPadding shadow_dynamic themeColor column-flex">
+			<div class="column-flex wrap">
+				<div class="row-flex">
+					<div id="AddBox_Unit" class="column-flex">
+						<label class="inputLabel">Unit</label>
+						<input type="number" class="themeInput noMarginPadding" maxlength="4" placeholder="Unit here">
+					</div>
+					<div id="AddBox_ID" class="column-flex">
+						<label class="inputLabel">ID</label>
+						<input type="number" class="themeInput noMarginPadding" maxlength="4" placeholder="ID here">
+					</div>
+				</div>
+				<div id="AddBox_Word" class="column-flex">
+					<label class="inputLabel">Word</label>
+					<input type="text" class="themeInput noMarginPadding" maxlength="32" placeholder="Word here">
+				</div>
+				<div id="AddBox_Mean" class="column-flex">
+					<label class="inputLabel">Mean</label>
+					<input type="text" class="themeInput noMarginPadding" maxlength="64" placeholder="Mean here">
+				</div>
+			</div>
+			<button id="AddBoxAdd" class="noMargin notSelectable cursor centerText noOutline noTapHighlight bold">
+				<i class="material-icons">add</i>
+			</button>
+		</div>
+	</div>
+</body>
+
+</html>
