@@ -174,6 +174,21 @@ $(document).ready(function ()
 		overlayIsOn = 0;
 		changeOverlay();
 	});
+	$("#setting_selectable").click(function ()
+	{
+		if($("#phpData").hasClass("notSelectable"))
+		{
+			$("#phpData").removeClass("notSelectable");
+			$(this).text("텍스트 잠금 켜기");
+		}
+		else
+		{
+			$("#phpData").addClass("notSelectable");
+			$(this).text("텍스트 잠금 끄기");
+		}
+		overlayIsOn = 0;
+		changeOverlay();
+	});
 	$("#prevButton").click(function ()
 	{
 		if ($(this).hasClass('disabled'))
