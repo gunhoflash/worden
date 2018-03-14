@@ -179,12 +179,12 @@ $(document).ready(function ()
 		if($("#phpData").hasClass("notSelectable"))
 		{
 			$("#phpData").removeClass("notSelectable");
-			$(this).text("텍스트 잠금 켜기");
+			$(this).children("a").text("텍스트 잠금 켜기");
 		}
 		else
 		{
 			$("#phpData").addClass("notSelectable");
-			$(this).text("텍스트 잠금 끄기");
+			$(this).children("a").text("텍스트 잠금 끄기");
 		}
 		overlayIsOn = 0;
 		changeOverlay();
