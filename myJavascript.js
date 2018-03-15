@@ -31,8 +31,9 @@ function requestWord(highlightID)
 					{
 						if (result == 1)
 						{
-							target.removeClass("tts-not-yet");
-							target.append("<audio autoplay src=\"tts/"+target.data("value")+".mp3\"></audio>");
+							target.removeClass("tts-not-yet")
+							.append("<audio src=\"tts/"+target.data("value")+".mp3\"></audio>")
+							.find("audio")[0].play();
 						}
 						else
 						{

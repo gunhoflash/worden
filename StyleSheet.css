@@ -36,7 +36,7 @@ input[type="number"]::-webkit-inner-spin-button
 	#SideNav
 	{
 		height: calc(100% + 60px);
-		height: -moz-calc(100%);
+		height: -moz-calc(100% + 60px);
 		padding-bottom: 60px;
 		overflow-y: auto;
 	}
@@ -100,6 +100,7 @@ footer
 	line-height: 1rem;
 	width: 100%;
 	padding: 1rem 0rem 1rem 0rem;
+	margin-top: 1rem;
 	color: #333333;
 	color: var(--foregroundColor1);
 	border-top: 2px solid #dadada;
