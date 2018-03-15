@@ -25,22 +25,26 @@ function requestWord(highlightID)
 				console.log("click : " + target.data("value"));
 				if (target.hasClass("tts-not-yet"))
 				{
-					$.post('tts.php',
-					{ text: target.data("value") },
-					function (result)
-					{
-						if (result == 1)
+					if (!target.hasClass("tts-now-loading"))
+					{					
+						target.addClass("tts-now-loading");
+						$.post('tts.php',
+						{ text: target.data("value") },
+						function (result)
 						{
-							target.removeClass("tts-not-yet")
-							.append("<audio src=\"tts/"+target.data("value")+".mp3\"></audio>")
-							.find("audio")[0].play();
-						}
-						else
-						{
-							console.log("tts error");
-							alert("[에러] " + result);
-						}
-					}, "json");
+							if (result == 1)
+							{
+								target.removeClass("tts-not-yet").removeClass("tts-now-loading")
+								.append("<audio src=\"tts/"+target.data("value")+".mp3\"></audio>");
+								target.ready(function (){target.find("audio")[0].play()});
+							}
+							else
+							{
+								console.log("tts error");
+								alert("[에러] " + result);
+							}
+						}, "json");
+					}
 				}
 				else
 				{
